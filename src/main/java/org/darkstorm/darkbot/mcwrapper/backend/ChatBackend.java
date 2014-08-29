@@ -46,6 +46,9 @@ public class ChatBackend implements Backend, EventListener {
 		owner = message.substring(index1, index2);
 		if (message.toLowerCase().contains("fuck")) {
 			if (!off.containsKey(owner)) {
+				bot.say("Please do not say curse words in chat " + owner + "!");
+				off.put(owner, 1);
+			} else if (off.get(owner) == 1) {
 				bot.say("/mute " + owner + " 5m");
 				bot.say("Please do not say curse words in chat " + owner + "!");
 				bot.say("You have been muted for 5 minutes");
