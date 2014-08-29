@@ -44,7 +44,12 @@ public class ChatBackend implements Backend, EventListener {
 		int index1 = 0;//message.indexOf("]") + 1;
 		int index2 = message.indexOf(" ");
 		owner = message.substring(index1, index2);
-		if (message.toLowerCase().contains("fuck")) {
+		if (message.toLowerCase().contains("fuck") 
+			|| message.toLowerCase().contains("cunt") 
+			|| message.toLowerCase().contains("shit") 
+			|| message.toLowerCase().contains("ass") 
+			|| message.toLowerCase().contains("bitch") 
+			|| message.toLowerCase().contains("nigger")) {
 			if (!off.containsKey(owner)) {
 				bot.say("Please do not say curse words in chat " + owner + "!");
 				off.put(owner, 1);
