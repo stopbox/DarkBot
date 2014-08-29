@@ -34,6 +34,18 @@ public class ChatBackend implements Backend, EventListener {
 	}
 
 	@EventHandler
+	public void onChat(ChatReceivedEvent event) {
+		String message = Util.stripColors(event.getMessage());
+		String owner;
+		int index1 = 0;//message.indexOf("]") + 1;
+		int index2 = message.indexOf(" ") - 1;
+		owner = message.substring(index1, index2);
+		if (message.toLowerCase().contains("fuck")) {
+			bot.say("Please do not say curse words in chat" + owner + "!");
+		}
+	}
+	
+	@EventHandler
 	public void onChatReceived(ChatReceivedEvent event) {
 		String message = Util.stripColors(event.getMessage());
 		String executor = null;
@@ -41,8 +53,7 @@ public class ChatBackend implements Backend, EventListener {
 			int index = message.indexOf(owner);
 			if(index == -1)
 				continue;
-			if(executor == null || index < message.indexOf(executor))
-				executor = owner;
+			executor = owner;
 		}
 		if(executor == null)
 			return;
