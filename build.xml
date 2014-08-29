@@ -107,4 +107,8 @@
 		<propertyregex property="protocolBase" input="${protocolsPackage}" regexp="^([a-zA-Z][a-zA-Z0-9]+).*" select="\1" />
 		<delete dir="${protocolsDir}/${protocolBase}" />
 	</target>
+      <!-- Generate javadocs for current project into ${doc.dir} -->
+  <target name="doc" depends="init" description="generate documentation">
+    <javadoc sourcepath="${source.dir}" destdir="${doc.dir}"/>
+  </target>
 </project>
