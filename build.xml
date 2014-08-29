@@ -9,6 +9,7 @@
 		<property name="mainClass" value="org.darkstorm.darkbot.mcwrapper.Main" />
 		<property name="antContribPath" value="build/ant-contrib-1.0b3.jar" />
         <property name="doc.dir" location="doc"/>
+        <mkdir dir="${doc.dir}"/>
 	</target>
 
 	<target name="clean" depends="init">
