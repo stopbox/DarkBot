@@ -37,7 +37,7 @@ public class ChatBackend implements Backend, EventListener {
 		mcbot.getEventBus().unregister(this);
 	}
 
-/*	@EventHandler
+	@EventHandler
 	public void onChat(ChatReceivedEvent event) {
 		String message = Util.stripColors(event.getMessage());
 		String owner;
@@ -76,7 +76,7 @@ public class ChatBackend implements Backend, EventListener {
 				bot.say("/ban " + owner + " You have ben permantly banned for curseing -KnightBot");
 			}
 		}
-	}*/
+	}
 	
 	@EventHandler
 	public void onChatReceived(ChatReceivedEvent event) {
